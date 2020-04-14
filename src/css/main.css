@@ -1,6 +1,13 @@
 .bg-site-purple {
   background-color: #0e0b2b;
 }
+.badge-light-purple {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000;
+}
+.color-light-purple {
+  color: rgba(255, 255, 255, 0.7);
+}
 .color-white {
   color: white;
 }
