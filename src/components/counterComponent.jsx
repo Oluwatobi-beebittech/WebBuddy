@@ -2,11 +2,11 @@ import React, { Component } from "react";
 class Counter extends Component {
   render() {
     return (
-      <div>
-        <div class="row justify-content-center">
+      <React.Fragment>
+        <div className="row justify-content-center">
           <a href="#" target="">
             <svg
-              class="bi bi-plus-square-fill"
+              className="bi bi-plus-square-fill"
               width="2em"
               height="2em"
               viewBox="0 0 16 16"
@@ -21,8 +21,8 @@ class Counter extends Component {
             </svg>
           </a>
         </div>
-        <div class="container">ds</div>
-      </div>
+        <div className="container">ds</div>
+      </React.Fragment>
     );
   }
 }
