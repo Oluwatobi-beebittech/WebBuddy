@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "./css/main.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
-import Counter from "./components/counterComponent";
+import Nav from './containers/nav';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter />
+    <Nav />
+
   </React.StrictMode>,
   document.getElementById("root")
 );
