@@ -19,7 +19,7 @@ class Nav extends Component {
             clip-rule="evenodd"
           />
         </svg>
-        <a className="navbar-brand text-white ml-md-n5 ml-lg-2" href="#">
+        <a className="navbar-brand text-white ml-md-n5 ml-lg-2" >
           WebBuddy
         </a>
       </nav>

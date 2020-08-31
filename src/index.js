@@ -5,11 +5,12 @@ import "./css/main.css";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import Nav from './containers/nav';
+import AddCards from './containers/addCards';
 
 ReactDOM.render(
   <React.StrictMode>
     <Nav />
-
+    <AddCards />
   </React.StrictMode>,
   document.getElementById("root")
 );
