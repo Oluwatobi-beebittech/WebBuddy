@@ -6,25 +6,15 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import Nav from "./containers/nav";
 import AddCards from "./containers/addCards";
-import Cards from "./containers/cards";
-
-const bg = {
-  lightPurple: "#D7A9E3",
-  lightGreen: "#A8D5BA",
-  lightBrown: "#FEF8DD",
-};
+import CardRow from "./containers/cardRow";
 
 ReactDOM.render(
   <React.StrictMode>
     <Nav />
     <AddCards />
     <div className="container mt-2">
-      <div className="row">
-        <Cards cardColor={bg.lightGreen} />
-        <Cards cardColor={bg.lightGreen} />
-        <Cards cardColor={bg.lightGreen} />
-        <Cards cardColor={bg.lightGreen} />
-      </div>
+      <CardRow />
+      <CardRow />
     </div>
   </React.StrictMode>,
   document.getElementById("root")

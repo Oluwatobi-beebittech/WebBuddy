@@ -10,7 +10,7 @@ class Cards extends Component {
   render() {
     return (
       <div
-        className="col-md-3 shadow-sm myCard ml-1"
+        className="col-md-3 shadow-sm myCard"
         style={{ backgroundColor: this.props.cardColor }}
       >
         <AddItem />
