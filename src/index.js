@@ -4,6 +4,7 @@ import "./index.css";
 import "./css/main.css";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
 import Nav from "./containers/nav";
 import AddCards from "./containers/addCards";
 import CardRow from "./containers/cardRow";

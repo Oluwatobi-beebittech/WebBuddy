@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { AddItem } from "./addItem";
 import { DestroyCard } from "./destroyCard";
-
+import {ListItem} from "./listItem";
+ 
 class Cards extends Component {
   state = {};
   constructor(props) {
@@ -15,6 +16,9 @@ class Cards extends Component {
       >
         <AddItem />
         <DestroyCard />
+        <div className = "accordion">
+          <ListItem />
+        </div>
       </div>
     );
   }

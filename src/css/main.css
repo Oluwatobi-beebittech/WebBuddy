@@ -13,4 +13,5 @@
 }
 .myCard {
   height: 25em;
+  overflow-y: scroll;
 }
