@@ -12,7 +12,8 @@
   color: white;
 }
 .myCard {
-  height: 25em;
+  min-height: 10em;
+  max-height: 25em;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: #49465f #cececf;

@@ -13,7 +13,7 @@ class Cards extends Component {
     return (
       <React.Fragment>
         <div
-          className="col-md-3 shadow-sm px-0 pb-2"
+          className="col-md-3 shadow px-0 pb-2 mt-2"
           style={{ backgroundColor: this.props.cardColor }}
         >
           <div
