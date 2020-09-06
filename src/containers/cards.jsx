@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { AddItem } from "./addItem";
 import { DestroyCard } from "./destroyCard";
-import {ListItem} from "./listItem";
-import {Accordion} from "react-bootstrap";
- 
+import { ListItem } from "./listItem";
+import { Accordion } from "react-bootstrap";
+let white = "red";
 class Cards extends Component {
   state = {};
   constructor(props) {
@@ -11,17 +11,22 @@ class Cards extends Component {
   }
   render() {
     return (
-      <div
-        className="col-md-3 shadow-sm myCard"
-        style={{ backgroundColor: this.props.cardColor }}
-        id="me"
-      >
-        <AddItem />
-        <DestroyCard />
-        <Accordion>
-          <ListItem />
-        </Accordion>
-      </div>
+      <React.Fragment>
+        <div
+          className="col-md-3 shadow-sm px-0 pb-2"
+          style={{ backgroundColor: this.props.cardColor }}
+        >
+          <div className="w-100 mx-auto" style={{ backgroundColor: this.props.cardColor }}>
+            <AddItem />
+            <DestroyCard />
+          </div>
+          <div className="myCard">
+            <Accordion >
+              <ListItem/>
+            </Accordion>
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

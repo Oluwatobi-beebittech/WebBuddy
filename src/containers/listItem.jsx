@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
 
+const white = "white";
+
 export class ListItem extends Component {
   render() {
     return (
       <React.Fragment>
         <Card>
-          <Card.Header>
+          <Card.Header style={{ backgroundColor: white}}>
             <Accordion.Toggle as={Button} variant="link" eventKey="0">
               <svg
                 width="1em"
