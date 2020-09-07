@@ -15,6 +15,7 @@ class AddCards extends Component {
 
   handleCreateCard = (e) => {
     e.preventDefault();
+    this.handleShowModal(false);
   };
 
   render() {
