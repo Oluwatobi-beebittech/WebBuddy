@@ -15,7 +15,7 @@ export class DestroyCard extends Component {
   }
 
 handleDeleteCheck = (e) => {
-  this.setState({ deleteChecked: e.target.checked})
+  this.setState({ deleteCardChecked: e.target.checked})
 }
 
   handleDeleteCard = (e) => {

@@ -13,22 +13,23 @@ export class ListItem extends Component {
   }
 
   handleShowModal = (value) => {
-    this.setState({show: value});
-  }
+    this.setState({ show: value });
+  };
 
-  handleDeleteCheck = (e) => {
-    this.setState({deleteListChecked: e.target.checked});
-  }
+  handleDeleteItemCheck = (e) => {
+    this.setState({ deleteListChecked: e.target.checked });
+  };
 
   handleDeleteItem = (e) => {
     e.preventDefault();
     this.handleShowModal(false);
-  }
+  };
   render() {
     return (
       <React.Fragment>
         <Card>
           <Card.Header style={{ backgroundColor: white }}>
+            <span class="align-bottom">Item Title</span>
             <div className="float-right">
               <Accordion.Toggle as={Button} variant="link" eventKey="0">
                 <svg
@@ -85,12 +86,12 @@ export class ListItem extends Component {
                     className="custom-control-input"
                     type="checkbox"
                     value=""
-                    id="delete-check"
-                    onChange={this.handleDeleteCheck}
+                    id="delete-check-item"
+                    onChange={this.handleDeleteItemCheck}
                   />
                   <label
                     className="custom-control-label"
-                    htmlFor="delete-check"
+                    htmlFor="delete-check-item"
                   >
                     Delete
                   </label>
