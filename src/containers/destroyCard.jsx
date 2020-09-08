@@ -6,7 +6,7 @@ export class DestroyCard extends Component {
     super(props);
     this.state = { 
       show: false,
-      deleteChecked: false
+      deleteCardChecked: false
     };
   }
 
@@ -26,7 +26,7 @@ handleDeleteCheck = (e) => {
   render() {
     return (
       <React.Fragment>
-        <a className="btn" onClick={() => this.handleShowModal(true)}>
+        <a className="btn float-right" onClick={() => this.handleShowModal(true)}>
           <svg
             width="1.5em"
             height="1.5em"
@@ -76,7 +76,7 @@ handleDeleteCheck = (e) => {
                   type="submit"
                   className="btn btn-danger"
                   onClick={this.handleDeleteCard} 
-                 disabled={!this.state.deleteChecked}
+                 disabled={!this.state.deleteCardChecked}
                 >
                   Delete
                 </button>
