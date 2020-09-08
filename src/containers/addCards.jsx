@@ -46,7 +46,7 @@ class AddCards extends Component {
           size="sm"
           show={this.state.show}
           onHide={() => this.handleShowModal(false)}
-          aria-labelledby="create-card"
+          ariaLabelledBy="create-card"
           centered
         >
           <Modal.Header closeButton>
