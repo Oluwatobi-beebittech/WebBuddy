@@ -29,7 +29,7 @@ export class ListItem extends Component {
       <React.Fragment>
         <Card>
           <Card.Header style={{ backgroundColor: white }}>
-            <span class="align-bottom">Item Title</span>
+            <span className="align-bottom">Item Title</span>
             <div className="float-right">
               <Accordion.Toggle as={Button} variant="link" eventKey="0">
                 <svg

@@ -56,7 +56,17 @@ export class AddItem extends Component {
                     className="form-control"
                     id="item-title"
                     placeholder="Item Title"
+                    onChange={this.props.onChangeItemTitle}
+                    value={this.props.newItemTitle}
+                    maxLength={20}
+                    ariaDescribedBy="itemTitleHelpText"
                   />
+                  <small
+                    id="itemTitleHelpText"
+                    className="form-text text-muted float-right"
+                  >
+                    {this.props.newItemTitle.length}/20
+                  </small>
                 </div>
                 <div className="form-group col-md-12">
                   <label htmlFor="item-data">Item Details</label>
@@ -66,7 +76,17 @@ export class AddItem extends Component {
                     id="item-data"
                     placeholder="Description of the item"
                     rows="3"
+                    onChange={this.props.onChangeItemDescription}
+                    value={this.props.newItemDescription}
+                    maxLength={100}
+                    ariaDescribeBy="itemDescriptionHelpText"
                   ></textarea>
+                  <small
+                    id="itemDescriptionHelpText"
+                    className="form-text text-muted float-right"
+                  >
+                    {this.props.newItemDescription.length}/100
+                  </small>
                 </div>
               </div>
 

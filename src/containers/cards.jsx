@@ -23,7 +23,12 @@ class Cards extends Component {
             <p className="d-inline ml-2">
               <b>Title</b>
             </p>
-            <AddItem />
+            <AddItem
+              onChangeItemTitle={this.props.onChangeItemTitle}
+              onChangeItemDescription={this.props.onChangeItemDescription}
+              newItemTitle={this.props.newItemTitle}
+              newItemDescription={this.props.newItemDescription}
+            />
             <DestroyCard />
           </div>
           <div className="myCard">

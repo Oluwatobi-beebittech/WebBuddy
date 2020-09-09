@@ -65,7 +65,15 @@ class AddCards extends Component {
                     placeholder="Card Title"
                     onChange={this.props.onChangeCardTitle}
                     value={this.props.newCardTitle}
+                    maxLength={20}
+                    ariaDescribedBy="cardTitleHelpText"
                   />
+                  <small
+                    id="cardTitleHelpText"
+                    className="form-text text-muted float-right"
+                  >
+                    {this.props.newCardTitle.length}/20
+                  </small>
                 </div>
               </div>
 

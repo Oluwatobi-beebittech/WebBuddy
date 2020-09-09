@@ -11,9 +11,29 @@ class CardRow extends Component {
   render() {
     return (
       <div className="row justify-content-around mt-2">
-        <Cards cardColor={bg.lightGreen} />
-        <Cards cardColor={bg.lightPurple} />
-        <Cards cardColor={bg.lightBrown} />
+        <Cards
+          cardColor={bg.lightGreen}
+          onChangeItemTitle={this.props.onChangeItemTitle}
+          onChangeItemDescription={this.props.onChangeItemDescription}
+          newItemTitle={this.props.newItemTitle}
+          newItemDescription={this.props.newItemDescription}
+        />
+
+        <Cards
+          cardColor={bg.lightGreen}
+          onChangeItemTitle={this.props.onChangeItemTitle}
+          onChangeItemDescription={this.props.onChangeItemDescription}
+          newItemTitle={this.props.newItemTitle}
+          newItemDescription={this.props.newItemDescription}
+        />
+
+        <Cards
+          cardColor={bg.lightGreen}
+          onChangeItemTitle={this.props.onChangeItemTitle}
+          onChangeItemDescription={this.props.onChangeItemDescription}
+          newItemTitle={this.props.newItemTitle}
+          newItemDescription={this.props.newItemDescription}
+        />
       </div>
     );
   }

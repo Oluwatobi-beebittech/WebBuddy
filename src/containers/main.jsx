@@ -11,6 +11,8 @@ class Main extends Component {
         { cardKey: 0, cardTitle: 0, listKey: 0, listTitle: 0, listValue: 0 },
       ],
       newCardTitle: "",
+      newItemTitle: "",
+      newItemDescription: "",
     };
     let cardRows = [];
     let cardsPerRow = [];
@@ -25,6 +27,14 @@ class Main extends Component {
     console.log(this.state.newCardTitle);
   };
 
+  handleItemTitleChange = (e) => {
+    this.setState({ newItemTitle: e.target.value.trim() });
+  };
+
+  handleItemDescriptionChange = (e) => {
+    this.setState({ newItemDescription: e.target.value });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -32,11 +42,16 @@ class Main extends Component {
         <AddCards
           addCard={this.handleAddCards}
           onChangeCardTitle={this.handleCardTitleChange}
-          newCardTitle = {this.state.newCardTitle}
+          newCardTitle={this.state.newCardTitle}
         />
         <div className="container mt-2">
-          <CardRow />
-          <CardRow />
+          <CardRow
+            onChangeItemTitle={this.handleItemTitleChange}
+            onChangeItemDescription={this.handleItemDescriptionChange} 
+            newItemTitle={this.state.newItemTitle} 
+            newItemDescription={this.state.newItemDescription} 
+          />
+          
         </div>
       </React.Fragment>
     );
