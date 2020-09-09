@@ -63,6 +63,8 @@ class AddCards extends Component {
                     className="form-control"
                     id="card-title"
                     placeholder="Card Title"
+                    onChange={this.props.onChangeCardTitle}
+                    value={this.props.newCardTitle}
                   />
                 </div>
               </div>
