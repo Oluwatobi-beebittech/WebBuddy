@@ -95,6 +95,7 @@ export class AddItem extends Component {
                   type="submit"
                   className="btn btn-primary"
                   onClick={this.handleCreateItem}
+                  disabled={this.props.newItemTitle.trim() === ""}
                 >
                   Create
                 </button>
