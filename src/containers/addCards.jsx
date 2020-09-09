@@ -74,6 +74,7 @@ class AddCards extends Component {
                   type="submit"
                   className="btn btn-primary"
                   onClick={this.handleCreateCard}
+                  disabled={this.props.newCardTitle === ""}
                 >
                   Create
                 </button>

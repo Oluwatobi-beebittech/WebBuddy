@@ -21,7 +21,7 @@ class Main extends Component {
   };
 
   handleCardTitleChange = (e) => {
-    this.setState({ newCardTitle: e.target.value });
+    this.setState({ newCardTitle: e.target.value.trim() });
     console.log(this.state.newCardTitle);
   };
 
