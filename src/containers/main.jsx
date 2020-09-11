@@ -24,7 +24,7 @@ class Main extends Component {
 
   handleAddCards = () => {
     this.setState((state) => ({
-      cards: state.cards.push({
+      cards: state.cards.concat({
         cardKey: this.generateKey(state.newCardTitle),
         cardTitle: state.newCardTitle,
         lists: [],
