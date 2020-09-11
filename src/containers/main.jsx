@@ -7,7 +7,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: [,],
+      cards: [],
       newCardTitle: "",
       newItemTitle: "",
       newItemDescription: "",
@@ -22,15 +22,15 @@ class Main extends Component {
     return sub;
   };
 
-  handleAddCards = (cardTitle) => {
-    this.setState((state, props) => ({
-      cards: state.cards.append({
+  handleAddCards = () => {
+    this.setState((state) => ({
+      cards: state.cards.push({
         cardKey: this.generateKey(state.newCardTitle),
         cardTitle: state.newCardTitle,
         lists: [],
       }),
     }));
-  };//{ listKey: "", listTitle: "", listValue: "" }
+  }; //{ listKey: "", listTitle: "", listValue: "" }
 
   handleCardTitleChange = (e) => {
     this.setState({ newCardTitle: e.target.value.trim() });
@@ -46,6 +46,14 @@ class Main extends Component {
   };
 
   render() {
+    let cardRows = this.state.cards.map((card) => (
+      <CardRow
+        onChangeItemTitle={this.handleItemTitleChange}
+        onChangeItemDescription={this.handleItemDescriptionChange}
+        newItemTitle={this.state.newItemTitle}
+        newItemDescription={this.state.newItemDescription}
+      />
+    ));
     return (
       <React.Fragment>
         <Nav />
@@ -54,14 +62,7 @@ class Main extends Component {
           onChangeCardTitle={this.handleCardTitleChange}
           newCardTitle={this.state.newCardTitle}
         />
-        <div className="container mt-2">
-          <CardRow
-            onChangeItemTitle={this.handleItemTitleChange}
-            onChangeItemDescription={this.handleItemDescriptionChange}
-            newItemTitle={this.state.newItemTitle}
-            newItemDescription={this.state.newItemDescription}
-          />
-        </div>
+        <div className="container mt-2">{cardRows}</div>
       </React.Fragment>
     );
   }
