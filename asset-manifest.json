@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/WebBuddy/static/css/main.52ae1630.chunk.css",
+    "main.js": "/WebBuddy/static/js/main.2be769ec.chunk.js",
+    "main.js.map": "/WebBuddy/static/js/main.2be769ec.chunk.js.map",
+    "runtime-main.js": "/WebBuddy/static/js/runtime-main.c5cfab09.js",
+    "runtime-main.js.map": "/WebBuddy/static/js/runtime-main.c5cfab09.js.map",
+    "static/css/2.ed890e5e.chunk.css": "/WebBuddy/static/css/2.ed890e5e.chunk.css",
+    "static/js/2.aa90156b.chunk.js": "/WebBuddy/static/js/2.aa90156b.chunk.js",
+    "static/js/2.aa90156b.chunk.js.map": "/WebBuddy/static/js/2.aa90156b.chunk.js.map",
+    "index.html": "/WebBuddy/index.html",
+    "precache-manifest.a38c84a253ea4ed4a26c8878309227b4.js": "/WebBuddy/precache-manifest.a38c84a253ea4ed4a26c8878309227b4.js",
+    "service-worker.js": "/WebBuddy/service-worker.js",
+    "static/css/2.ed890e5e.chunk.css.map": "/WebBuddy/static/css/2.ed890e5e.chunk.css.map",
+    "static/css/main.52ae1630.chunk.css.map": "/WebBuddy/static/css/main.52ae1630.chunk.css.map",
+    "static/js/2.aa90156b.chunk.js.LICENSE.txt": "/WebBuddy/static/js/2.aa90156b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c5cfab09.js",
+    "static/css/2.ed890e5e.chunk.css",
+    "static/js/2.aa90156b.chunk.js",
+    "static/css/main.52ae1630.chunk.css",
+    "static/js/main.2be769ec.chunk.js"
+  ]
+}
