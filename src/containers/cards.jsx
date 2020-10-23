@@ -9,11 +9,20 @@ class Cards extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
+    let listItems = this.props.cardItem.map((list) => (
+      <ListItem
+        key={list.listKey}
+        list={list}
+        onItemDelete={this.props.onItemDelete}
+        card={this.props.card}
+      />
+    ));
     return (
       <React.Fragment>
         <div
-          className="col-md-3 shadow px-0 pb-2 mt-2"
+          className="col-md-3 shadow px-0 pb-2 mt-3"
           style={{ backgroundColor: this.props.cardColor }}
         >
           <div
@@ -21,22 +30,27 @@ class Cards extends Component {
             style={{ backgroundColor: this.props.cardColor }}
           >
             <p className="d-inline ml-2">
-              <b>Title</b>
+              <b>{this.props.cardTitle}</b>
             </p>
             <AddItem
+              cardKey={this.props.id}
+              card={this.props.card}
+              onCreateItem={this.props.onCreateItem}
               onChangeItemTitle={this.props.onChangeItemTitle}
               onChangeItemDescription={this.props.onChangeItemDescription}
               newItemTitle={this.props.newItemTitle}
               newItemDescription={this.props.newItemDescription}
             />
-            <DestroyCard />
+            <DestroyCard
+              cardKey={this.props.id}
+              onCardDelete={this.props.onCardDelete}
+            />
           </div>
           <div className="myCard">
-            <Accordion>
-              <ListItem />
-            </Accordion>
+            <Accordion>{listItems}</Accordion>
           </div>
         </div>
+        <div className="col-md-1 mt-3"></div>
       </React.Fragment>
     );
   }

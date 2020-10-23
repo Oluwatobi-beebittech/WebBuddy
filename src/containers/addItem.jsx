@@ -14,6 +14,7 @@ export class AddItem extends Component {
 
   handleCreateItem = (e) => {
     e.preventDefault();
+    this.props.onCreateItem(this.props.card);
     this.handleShowModal(false);
   };
 

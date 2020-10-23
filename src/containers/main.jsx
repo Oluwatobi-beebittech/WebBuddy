@@ -12,25 +12,71 @@ class Main extends Component {
       newItemTitle: "",
       newItemDescription: "",
     };
-    let cardRows = [];
-    let cardsPerRow = [];
+    this.bg = ["#D7A9E3", "#A8D5BA", "#FEF8DD"];
   }
 
-  generateKey = (salt) => {
-    let saltArith = salt.length - 1 - (salt.length - 1) / 2;
-    let sub = salt.substr(0, saltArith);
-    return sub;
+  generateKey = () => {
+    return Date.now();
+  };
+
+  colorPicker = () => {
+    const index = Math.floor(Math.random() * 3);
+    return this.bg[index];
   };
 
   handleAddCards = () => {
+    const id = this.generateKey();
+    const color = this.colorPicker();
     this.setState((state) => ({
       cards: state.cards.concat({
-        cardKey: this.generateKey(state.newCardTitle),
+        cardKey: id,
         cardTitle: state.newCardTitle,
+        cardColor: color,
         lists: [],
       }),
+      newCardTitle: "",
     }));
   }; //{ listKey: "", listTitle: "", listValue: "" }
+
+  handleCardDelete = (cardKey) => {
+    const cards = this.state.cards.filter((c) => c.cardKey != cardKey);
+    this.setState({ cards: cards });
+  };
+
+  handleItemCreate = (card) => {
+    const id = this.generateKey();
+    const cards = [...this.state.cards];
+    const index = cards.indexOf(card);
+    cards[index] = { ...card };
+    cards[index].lists.push({
+      listKey: id,
+      listTitle: this.state.newItemTitle,
+      listDescription: this.state.newItemDescription,
+    });
+    console.log(cards);
+    this.setState({
+      cards: cards,
+      newCardTitle: "",
+      newItemTitle: "",
+      newItemDescription: "",
+    });
+  };
+
+  handleItemDelete = (card, itemKey) => {
+    const cards = [...this.state.cards];
+    const index = cards.indexOf(card);
+    const items = cards[index].lists.filter((l) => l.listKey != itemKey);
+    console.log(items);
+    cards[index].lists = items;
+    console.log("Here");
+    console.log(cards);
+    this.setState({
+      cards: cards,
+      newCardTitle: "",
+      newItemTitle: "",
+      newItemDescription: "",
+    });
+  };
 
   handleCardTitleChange = (e) => {
     this.setState({ newCardTitle: e.target.value.trim() });
@@ -46,14 +92,14 @@ class Main extends Component {
   };
 
   render() {
-    let cardRows = this.state.cards.map((card) => (
-      <CardRow
-        onChangeItemTitle={this.handleItemTitleChange}
-        onChangeItemDescription={this.handleItemDescriptionChange}
-        newItemTitle={this.state.newItemTitle}
-        newItemDescription={this.state.newItemDescription}
-      />
-    ));
+    // let cardRows = this.state.cards.map((card) => (
+    //   <CardRow
+    //     onChangeItemTitle={this.handleItemTitleChange}
+    //     onChangeItemDescription={this.handleItemDescriptionChange}
+    //     newItemTitle={this.state.newItemTitle}
+    //     newItemDescription={this.state.newItemDescription}
+    //   />
+    // ));
     return (
       <React.Fragment>
         <Nav />
@@ -62,7 +108,18 @@ class Main extends Component {
           onChangeCardTitle={this.handleCardTitleChange}
           newCardTitle={this.state.newCardTitle}
         />
-        <div className="container mt-2">{cardRows}</div>
+        <div className="container mt-2">
+          <CardRow
+            onChangeItemTitle={this.handleItemTitleChange}
+            onChangeItemDescription={this.handleItemDescriptionChange}
+            newItemTitle={this.state.newItemTitle}
+            newItemDescription={this.state.newItemDescription}
+            cards={this.state.cards}
+            onCreateItem={this.handleItemCreate}
+            onCardDelete={this.handleCardDelete}
+            onItemDelete={this.handleItemDelete}
+          />
+        </div>
       </React.Fragment>
     );
   }

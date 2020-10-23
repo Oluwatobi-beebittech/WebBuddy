@@ -20,6 +20,7 @@ handleDeleteCheck = (e) => {
 
   handleDeleteCard = (e) => {
     e.preventDefault();
+    this.props.onCardDelete(this.props.cardKey);
     this.handleShowModal(false);
   };
 
