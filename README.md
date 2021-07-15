@@ -7,3 +7,5 @@ This appliaction is a form of an online post-it note which helps to keep track o
 - Add an item description
 - Delete cards
 - Delete items in a card
+
+https://oluwatobi-beebittech.github.io/WebBuddy/
